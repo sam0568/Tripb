@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tripb - Escaneo QR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Librería para escanear QR -->
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+</head>
+<body>
+   
+    <p style="text-align: center;">
+        <img src="logotransparent.png" class="logo">
+    </p>
+    
+    <div class="texto-animado">
+        
+        <div class="container">
+            <div class="">
+                <img src="escanear-codigo.png" alt="scanner" class="logoscanner" width="100" height="100">
+                <h4>Escanea un código QR para ingresar a tu posta:</h4>
+                <div id="qr-reader" style="width:300px; margin-top:20px;"></div>
+                <p id="qr-result">Apunta la cámara al código QR de tu posta.</p>
+            </div>
+        </div>
+
+        <script>
+            function onScanSuccess(decodedText, decodedResult) {
+                // decodedText debe contener la URL de la posta
+                document.getElementById("qr-result").innerText = `QR leído: ${decodedText}`;
+                // Redirige automáticamente a la URL escaneada
+                window.location.href = decodedText;
+            }
+
+            // Configuración del escáner
+            var html5QrcodeScanner = new Html5QrcodeScanner(
+                "qr-reader", { fps: 10, qrbox: 250 });
+            html5QrcodeScanner.render(onScanSuccess);
+
+            // FUNCION PARA MOSTRAR EL PUNTAJE
+            function mostrarPuntaje() {
+                let puntaje = localStorage.getItem("puntajeTotal");
+                if (puntaje === null) {
+                    document.getElementById("puntaje-total").innerText = "Todavía no sumaron puntos";
+                } else {
+                    document.getElementById("puntaje-total").innerText = "Puntaje total: " + puntaje;
+                }
+            }
+
+        </script>
+
+
+
+    </div>
+
+   
+</body>
+</html>

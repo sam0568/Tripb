@@ -1,0 +1,281 @@
+/* -------------------- GLOBAL -------------------- */
+/* Fuente y ajustes generales */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Incluye padding y borde en el ancho */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------- CONTAINER -------------------- */
+.container {
+  max-width: 600px;
+  width: 90%;
+  margin: 3rem auto;  /* Centra horizontalmente */
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Responsive para móvil */
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    margin: 2rem auto;
+    padding: 1.5rem 1.5rem;
+  }
+}
+
+/* -------------------- HEADINGS -------------------- */
+h1, h2 {
+  font-weight: 600;
+  color: #050607;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+h3 {
+  font-weight: 200;
+  color: #050607;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* -------------------- LABELS -------------------- */
+label {
+  display: block;
+  margin: 1rem 0 0.4rem;
+  font-weight: 500;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* -------------------- INPUTS Y SELECTS -------------------- */
+select,
+input[type=password],
+input[type=number] {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1.8px solid #d1d9e6;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  outline-offset: 2px;
+  box-sizing: border-box; /* Arregla desbordamiento */
+}
+
+select:focus,
+input[type=password]:focus,
+input[type=number]:focus {
+  border-color: #0b3d91;
+  box-shadow: 0 0 8px rgba(11, 61, 145, 0.3);
+  outline: none;
+}
+
+/* -------------------- BOTONES -------------------- */
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: white;
+  background: #e21c0e;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.35s ease;
+  box-shadow: 0 4px 10px rgba(11, 61, 145, 0.4);
+}
+
+button:hover {
+  background: #121213;
+  box-shadow: 0 6px 15px rgba(7, 64, 120, 0.6);
+}
+
+/* -------------------- PREGUNTAS Y RESULTADOS -------------------- */
+.question {
+  margin-bottom: 2rem;
+}
+
+.options label {
+  display: block;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  font-weight: 400;
+  color: #222;
+  font-size: 1rem;
+}
+
+.error {
+  color: #d93025;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.result {
+  font-size: 1.4rem;
+  text-align: center;
+  color: #0b3d91;
+  font-weight: 600;
+}
+
+/* -------------------- ENLACES -------------------- */
+.nav-link {
+  display: block;
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #0b3d91;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #074078;
+  text-decoration: underline;
+}
+
+/* -------------------- EFECTO MÁQUINA DE ESCRIBIR -------------------- */
+.typewriter h1 {
+  overflow: hidden;             /* Oculta el texto que no entra en el ancho */
+  border-right: .15em solid black; /* Simula el cursor */
+  white-space: nowrap;          /* Evita saltos de línea */
+  margin: 0 auto;               /* Centrado horizontal */
+  letter-spacing: .1em;         /* Espaciado opcional */
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black }
+}
+
+/* -------------------- IMÁGENES Y LOGOS -------------------- */
+.logo {
+    width: 90%;      
+    max-width: 800px; 
+    height: auto;     
+    display: block;
+    margin: 0 auto;   
+}
+
+.logoscanner {
+    width: 20%;      
+    max-width: 200px; 
+    height: auto;     
+    display: block;
+    margin: 0 auto;   
+}
+
+/* -------------------- SCANNER QR -------------------- */
+#qr-reader {
+    width: 90%;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+
+/* -------------------- BOTONES -------------------- */
+
+.btn-puntaje {
+    padding: 10px 20px;
+    background: #f11616;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px auto 0;   /* margen superior y centrado horizontal */
+    display: block;         /* necesario para que margin auto funcione */
+    width: auto !important; /* ancho natural */
+    transition: background 0.3s ease;
+}
+
+.btn-puntaje:hover {
+    background: #45a049;
+}
+
+/*------------------ animation ---------------- */
+
+.texto-animado {
+  opacity: 0;
+  transform: translateY(20px); /* se coloca más abajo inicialmente */
+  animation: elevarTexto 1s ease-out forwards;
+  animation-delay: 0.5s; /* opcional: retraso para que no aparezca de golpe */
+  text-align: center;
+}
+
+@keyframes elevarTexto {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Botón de mostrar puntaje */
+#mostrar-puntaje-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #0b3d91;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 1rem auto;
+}
+
+#mostrar-puntaje-btn:hover {
+    background-color: #074078;
+    transform: translateY(-2px);
+}
+
+/* Cuadro de resultados */
+#puntaje-total {
+    max-width: 400px;
+    margin: 1rem auto;
+    padding: 1rem 1.5rem;
+    background-color: #e9f0ff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    font-weight: 600;
+    color: #0b3d91;
+    white-space: pre-line; /* Para que respete los saltos de línea */
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 480px) {
+    #puntaje-total {
+        width: 90%;
+        padding: 0.8rem 1rem;
+    }
+
+    #mostrar-puntaje-btn {
+        width: 80%;
+        font-size: 0.95rem;
+    }
+}
